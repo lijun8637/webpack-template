@@ -1,0 +1,18 @@
+input{
+  font-size: 18px;
+}
+input::placeholder {
+  color: gray;
+}
+img{
+  border:  1px solid red;
+}
+.image {
+  height: 200px;
+  background: url('@/assets/logo.png') no-repeat;
+}
+@media (min-resolution: 2dppx) {
+  .image {
+    background: url('@/assets/logo.png');
+  }
+}

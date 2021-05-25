@@ -1,0 +1,90 @@
+{
+  "name": "es6-demo",
+  "version": "1.0.0",
+  "description": "study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config build/webpack.dev.js",
+    "build": "webpack --mode production --config build/webpack.build.js",
+    "build:dll": "webpack --config build/webpack.dll.js && webpack --config build/webpack.build.js && webpack --config build/webpack.dll.js",
+    "dll": "webpack --config build/webpack.dll.js",
+    "watch": "webpack --watch --config build/webpack.dev.js",
+    "server": "node build/server.js",
+    "dist": "http-server dist",
+    "pre": "webpack --mode development",
+    "config": "webpack --mode development --config build/webpack.config.js",
+    "config:build": "webpack --mode production --config build/webpack.config.js",
+    "config:dev": "webpack-dev-server --hot --inline  --config build/webpack.config.js",
+    "stats": "webpack --profile --json",
+    "lint": "eslint --ext src/** --fix",
+    "lints": "eslint --ext src/** --no-error-on-unmatched-pattern --quiet",
+    "lint:fix": "eslint --ext src/** --no-error-on-unmatched-pattern --fix",
+    "install-hook": "ln -s ../../build/git-hooks/pre-commit .git/hooks/pre-commit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,html}": [
+      "eslint --ext src/** --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/j96389/es6-demo.git"
+  },
+  "keywords": [
+    "lijun"
+  ],
+  "author": "lijun",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "autoprefixer": "^10.2.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.4",
+    "css-minimizer-webpack-plugin": "^3.0.0",
+    "csv-loader": "^3.0.3",
+    "eslint": "^7.26.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.4.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
+    "less-loader": "^9.0.0",
+    "lint-staged": "^11.0.0",
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass": "^6.0.0",
+    "postcss-advanced-variables": "^3.0.1",
+    "postcss-loader": "^5.3.0",
+    "postcss-nested": "^5.0.5",
+    "postcss-scss": "^3.0.5",
+    "prettier": "^2.3.0",
+    "sass-loader": "^11.1.1",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3",
+    "webpack-mock-server": "^1.0.6",
+    "xml-loader": "^1.2.1"
+  },
+  "dependencies": {
+    "core-js": "^3.12.1",
+    "regenerator-runtime": "^0.13.7"
+  }
+}
