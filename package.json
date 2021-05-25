@@ -1,7 +1,7 @@
 {
-  "name": "es6-demo",
+  "name": "{{name}}",
   "version": "1.0.0",
-  "description": "study",
+  "description": "{{description}}",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -39,10 +39,8 @@
     "type": "git",
     "url": "https://gitee.com/j96389/es6-demo.git"
   },
-  "keywords": [
-    "lijun"
-  ],
-  "author": "lijun",
+  "keywords": [ ],
+  "author": "{{author}}",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -64,16 +62,21 @@
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "husky": "^6.0.0",
+    {{#if less}}
+    "less": "^4.1.1",
     "less-loader": "^9.0.0",
+    {{/if}}
     "lint-staged": "^11.0.0",
     "mini-css-extract-plugin": "^1.6.0",
+    {{#if sass}}
     "node-sass": "^6.0.0",
+    "sass-loader": "^11.1.1",
+    {{/if}}
     "postcss-advanced-variables": "^3.0.1",
     "postcss-loader": "^5.3.0",
     "postcss-nested": "^5.0.5",
     "postcss-scss": "^3.0.5",
     "prettier": "^2.3.0",
-    "sass-loader": "^11.1.1",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.37.0",
